@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="10.3.4" />
+      <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.4" />
+      <PackageReference Include="Grpc.Core" Version="2.42.0" />
+      <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="6.0.0" />
+      <PackageReference Include="protobuf-net.Grpc" Version="1.0.152" />
+      <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
+      <PackageReference Include="Serilog" Version="2.11.0-dev-01371" />
+      <PackageReference Include="Serilog.AspNetCore" Version="4.1.1-dev-00241" />
+      <PackageReference Include="Serilog.Exceptions" Version="8.0.0" />
+      <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
+      <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
+      <PackageReference Include="Serilog.Sinks.File" Version="5.0.1-dev-00947" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Controllers" />
+      <Folder Include="Filters" />
+      <Folder Include="Middlewares" />
+      <Folder Include="Models" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\NG.BaseReadModels\NG.BaseReadModels.csproj" />
+      <ProjectReference Include="..\NG.Cache\NG.Cache.csproj" />
+      <ProjectReference Include="..\NG.Configs\NG.Configs.csproj" />
+      <ProjectReference Include="..\NG.EnumDefine\NG.EnumDefine.csproj" />
+      <ProjectReference Include="..\NG.Extensions\NG.Extensions.csproj" />
+      <ProjectReference Include="..\NG.Grpc.Service.Extensions\NG.Grpc.Service.Extensions.csproj" />
+      <ProjectReference Include="..\NG.HttpClientBase\NG.HttpClientBase.csproj" />
+      <ProjectReference Include="..\NG.NGGrpcClient\NG.NGGrpcClient.csproj" />
+    </ItemGroup>
+
+</Project>
