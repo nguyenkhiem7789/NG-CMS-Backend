@@ -21,4 +21,10 @@ public class CommonUtility
 
         return shortName.ToUpper();
     }
+
+    public static string GenerateGuid()
+    {
+        return Guid.NewGuid().ToString("N");
+    }
+    
 }

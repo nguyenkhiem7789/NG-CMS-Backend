@@ -26,4 +26,22 @@ public static class Extension
     {
         return item == null ? string.Empty : item.ToString().Trim();
     }
+
+    public static DateTime GetCurrentDate()
+    {
+        return DateTime.Now;
+    }
+
+    public static DateTime GetCurrentDateUtc()
+    {
+        return DateTime.Now;
+    }
+
+    public static string AsString(this object? item, string defaultString = default(string))
+    {
+        if (item == null || item.Equals(DBNull.Value)) return defaultString;
+        var value = item.ToString().Trim();
+        return string.IsNullOrEmpty(value) ? defaultString : value;
+    }
+    
 }
