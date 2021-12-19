@@ -2,7 +2,7 @@
 
 namespace NG.Cache;
 
-public class Redisconnection
+public class RedisConnection
 {
     private readonly string _serverIp;
     private readonly string _password;
@@ -85,7 +85,7 @@ public class Redisconnection
         }
     }
 
-    public Redisconnection(string serverIp, string password)
+    public RedisConnection(string serverIp, string password)
     {
         _serverIp = serverIp;
         _password = password;

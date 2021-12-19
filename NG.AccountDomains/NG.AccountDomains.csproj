@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="protobuf-net" Version="3.0.101" />
+      <ProjectReference Include="..\NG.BaseDomains\NG.BaseDomains.csproj" />
     </ItemGroup>
 
 </Project>

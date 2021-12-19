@@ -46,3 +46,24 @@ public enum HttpClientNameEnum
     Default, 
     Retry
 }
+
+public enum ErrorCodeEnum
+{
+    NoErrorCode = 0,
+    Success = 1,
+    Fail = 2,
+    InternalExceptions = 500,
+    Unauthorized = 401,
+    NullRequestExceptions = 501,
+    NotExistExceptions = 503,
+    PermissionDeny = 403,
+    AntiXss = 502
+}
+
+public enum StatusEnum
+{
+    Deleted = -1,
+    Active = 1,
+    New = 2,
+    InActive = 3
+}

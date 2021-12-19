@@ -7,11 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="System.ServiceModel.Primitives" Version="4.9.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\NG.AccountCommands\NG.AccountCommands.csproj" />
+      <ProjectReference Include="..\NG.AccountReadModels\NG.AccountReadModels.csproj" />
       <ProjectReference Include="..\NG.BaseCommands\NG.BaseCommands.csproj" />
-      <ProjectReference Include="..\NG.BaseReadModels\NG.BaseReadModels.csproj" />
-      <ProjectReference Include="..\NG.Common\NG.Common.csproj" />
-      <ProjectReference Include="..\NG.EventBusModels\NG.EventBusModels.csproj" />
-      <ProjectReference Include="..\NG.Extensions\NG.Extensions.csproj" />
     </ItemGroup>
 
 </Project>

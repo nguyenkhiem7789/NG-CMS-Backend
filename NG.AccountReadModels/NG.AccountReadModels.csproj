@@ -7,11 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\NG.BaseCommands\NG.BaseCommands.csproj" />
+      <PackageReference Include="protobuf-net.Core" Version="3.0.101" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\NG.BaseReadModels\NG.BaseReadModels.csproj" />
-      <ProjectReference Include="..\NG.Common\NG.Common.csproj" />
-      <ProjectReference Include="..\NG.EventBusModels\NG.EventBusModels.csproj" />
-      <ProjectReference Include="..\NG.Extensions\NG.Extensions.csproj" />
     </ItemGroup>
 
 </Project>

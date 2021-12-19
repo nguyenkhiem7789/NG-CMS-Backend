@@ -2,6 +2,7 @@
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using NG.BaseReadModels;
 using NG.Common;
@@ -167,9 +168,9 @@ public class ContextService : IContextService
     }
 
     public string LanguageId => _httpContextAccessor?.HttpContext?.GetRouteValue(Lang).AsString();
-    public string LanguageDefaultId { get; }
+    public string LanguageDefaultId => LanguageId == "vi" ? string.Empty : LanguageId;
     public string LanguageIdBackend => _httpContextAccessor?.HttpContext?.Request.Headers["language"];
-    public string Token { get; }
+
     public string DateFormat => _httpContextAccessor?.HttpContext?.Request?.Headers["DateFormat"];
     public string DateTimeFormat => DateFormat + " HH:mm";
     public string NumberFormat => _httpContextAccessor?.HttpContext?.Request.Headers["NumberFormat"].AsString("0,0.##");
@@ -230,15 +231,43 @@ public class ContextService : IContextService
     public async Task VerifyOtp(bool isCMS)
     {
         string key = await SessionKeyGet();
+        var accInfo = await UserInfo();
+        if (isCMS)
+        {
+            accInfo.OtpCMSVerify = true;
+        }
+        else
+        {
+            accInfo.OtpVerify = true;
+        }
+
+        await _authenService.SetLoginInfo(key, accInfo);
+    }
+    
+    public string Token
+    {
+        get
+        {
+            string token = _httpContextAccessor?.HttpContext?.Request.Headers[Authorization];
+            if (string.IsNullOrEmpty(token))
+            {
+                return string.Empty;
+            }
+
+            return token.ToLower().StartsWith("bearer ") ? token.Substring(7) : string.Empty;
+        }
     }
 
-    public Task OtpIncrement()
+    public async Task OtpIncrement()
     {
-        throw new NotImplementedException();
+        string key = await SessionKeyGet();
+        var accInfo = await UserInfo();
+        accInfo.OTPSendCount += 1;
+        await _authenService.SetLoginInfo(key, accInfo);
     }
 
     public T GetService<T>()
     {
-        throw new NotImplementedException();
+        return _serviceProvider.GetService<T>();
     }
 }

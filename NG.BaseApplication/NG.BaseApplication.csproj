@@ -26,20 +26,23 @@
 
     <ItemGroup>
       <Folder Include="Controllers" />
-      <Folder Include="Filters" />
-      <Folder Include="Middlewares" />
       <Folder Include="Models" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\NG.BaseCommands\NG.BaseCommands.csproj" />
       <ProjectReference Include="..\NG.BaseReadModels\NG.BaseReadModels.csproj" />
       <ProjectReference Include="..\NG.Cache\NG.Cache.csproj" />
       <ProjectReference Include="..\NG.Configs\NG.Configs.csproj" />
       <ProjectReference Include="..\NG.EnumDefine\NG.EnumDefine.csproj" />
+      <ProjectReference Include="..\NG.EventBus\NG.EventBus.csproj" />
       <ProjectReference Include="..\NG.Extensions\NG.Extensions.csproj" />
       <ProjectReference Include="..\NG.Grpc.Service.Extensions\NG.Grpc.Service.Extensions.csproj" />
       <ProjectReference Include="..\NG.HttpClientBase\NG.HttpClientBase.csproj" />
+      <ProjectReference Include="..\NG.NgException\NG.NgException.csproj" />
+      <ProjectReference Include="..\NG.NGExeption\NG.NGExeption.csproj" />
       <ProjectReference Include="..\NG.NGGrpcClient\NG.NGGrpcClient.csproj" />
+      <ProjectReference Include="..\VNN.AccountManager.Shared\VNN.AccountManager.Shared.csproj" />
     </ItemGroup>
 
 </Project>

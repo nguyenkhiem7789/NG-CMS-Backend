@@ -19,6 +19,7 @@ public enum ConfigSettingEnum
     
     [Display(Name = "BusMaxRetry", Order = (int)ConfigSettingTypeEnum.Int)]
     BusMaxRetry = 8,
+    [Display(Name = "IsDevEnvironment")] IsDevEnvironment,
     
     HttpPort,
     HttpType,
@@ -27,6 +28,14 @@ public enum ConfigSettingEnum
     LoginExpiresTime,
     RefreshTokenExpiresTime,
     IsMobileApi,
+    RabitMqExChange,
+    RabitMqRoutingRoot,
+    RabitMqRouting,
+    RabitMqQueues,
+    RabitMqExChangeNotify,
+    RabitMqExChangeTrigger,
+    RabitMqExChangeTriggerListen,
+    RabitMqExChangeNotifyListen,
     
     [Display(Name = "RedisHostIps")] RedisHostIps,
     [Display(Name = "RedisPassword")] RedisPassword,

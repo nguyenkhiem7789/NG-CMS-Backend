@@ -6,4 +6,13 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="protobuf-net" Version="3.0.101" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\NG.Configs\NG.Configs.csproj" />
+      <ProjectReference Include="..\NG.EnumDefine\NG.EnumDefine.csproj" />
+    </ItemGroup>
+
 </Project>

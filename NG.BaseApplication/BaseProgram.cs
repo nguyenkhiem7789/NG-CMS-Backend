@@ -77,7 +77,7 @@ public class BaseProgram
             builder.Services.AddLogging(p => p.AddConfiguration(builder.Configuration).AddSerilog());
             
             // Config Redis
-            var connection = new Redisconnection(ConfigSettingEnum.RedisHostIps.GetConfig(),
+            var connection = new RedisConnection(ConfigSettingEnum.RedisHostIps.GetConfig(),
                 ConfigSettingEnum.RedisPassword.GetConfig());
             connection.MakeConnection().Wait();
             builder.Services.AddSingleton(provider => connection);
